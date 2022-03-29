@@ -31,15 +31,31 @@
                 </svg>
             </Button>
             <!--<Map :zoom="4" :lat="10" :lng="52" />-->
+            <Accordion :content="content" />
         </div>
     </main>
     <Footer />
 </template>
 
 <script setup lang="ts">
-import { Button } from './components/Ui';
+import { Button, Accordion } from './components/Ui';
 import Header from './components/Header/Header.vue';
 import Footer from './components/Footer/Footer.vue';
+
+const content = [
+    {
+        title: 'Item 1',
+        content: 'lorem ipsum dolor sit amet, consectetur',
+    },
+    {
+        title: 'Item 2',
+        content: 'lorem ipsum dolor sit amet, consectetur',
+    },
+    {
+        title: 'Item 3',
+        content: 'lorem ipsum dolor sit amet, consectetur',
+    },
+];
 </script>
 
 <style>

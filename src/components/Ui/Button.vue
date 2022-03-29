@@ -11,7 +11,7 @@
                 variant_ == 'primary' && !secondary && !disabled,
             'text-white bg-secondary-100':
                 variant_ == 'primary' && !secondary && disabled,
-            'text-primary border-primary bg-transparent':
+            'text-primary border-primary bg-white':
                 variant_ == 'secondary' && !primary && !disabled,
             'text-secondary-100 border-secondary-100 bg-transparent':
                 variant_ == 'secondary' && !primary && disabled,
