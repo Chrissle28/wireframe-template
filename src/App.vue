@@ -30,6 +30,7 @@
                     ></path>
                 </svg>
             </Button>
+            <Link href="/test"> Test </Link>
             <!--<Map :zoom="4" :lat="10" :lng="52" />-->
             <Accordion :content="content" />
         </div>
@@ -38,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import { Button, Accordion } from './components/Ui';
+import { Button, Accordion, Link } from './components/Ui';
 import Header from './components/Header/Header.vue';
 import Footer from './components/Footer/Footer.vue';
 
