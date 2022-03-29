@@ -33,15 +33,20 @@
             <Link href="/test"> Test </Link>
             <!--<Map :zoom="4" :lat="10" :lng="52" />-->
             <Accordion :content="content" />
+            <Input v-model="test" label="Label" placeholder="placeholder" />
+            {{ test }}
         </div>
     </main>
     <Footer />
 </template>
 
 <script setup lang="ts">
-import { Button, Accordion, Link } from './components/Ui';
+import { ref } from 'vue';
+import { Button, Accordion, Link, Input } from './components/Ui';
 import Header from './components/Header/Header.vue';
 import Footer from './components/Footer/Footer.vue';
+
+const test = ref('');
 
 const content = [
     {
