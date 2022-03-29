@@ -1,6 +1,6 @@
 <template>
     <div class="lg:hidden">
-        <button @click="menuOpen = !menuOpen" class="h-5 relative w-6">
+        <button @click="menuOpen = !menuOpen" class="relative w-6 h-5">
             <span
                 :class="{ 'top-1/2 rotate-45': menuOpen, 'top-0': !menuOpen }"
                 class="inline-block bg-secondary-900 transition-all duration-300 w-full h-0.5 absolute left-0"
@@ -30,7 +30,7 @@
                 class="fixed z-50 bg-secondary-100 py-10 overflow-y-auto top-[90px] left-0 w-screen"
                 style="height: calc(100vh - 90px)"
             >
-                <ul class="flex container flex-col gap-8">
+                <ul class="container flex flex-col gap-8">
                     <li v-for="entry in navigation">
                         <a v-if="!hasChildren(entry)" :href="entry.link">
                             {{ entry.name }}
@@ -56,7 +56,7 @@
                                 </svg>
                             </DisclosureButton>
                             <DisclosurePanel>
-                                <ul class="flex mt-8 flex-col gap-8 ml-8">
+                                <ul class="flex flex-col gap-8 mt-8 ml-8">
                                     <li v-for="child in entry.children">
                                         <a :href="child.link">
                                             {{ entry.name }}
@@ -83,8 +83,6 @@ const props = defineProps({
 });
 
 const menuOpen = ref(false);
-
-console.log(props.navigation);
 
 const hasChildren = (entry: any) => {
     if (!entry.children || entry.children.length <= 0) {

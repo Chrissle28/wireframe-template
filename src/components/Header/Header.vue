@@ -3,7 +3,7 @@
         :class="{ '-translate-y-[90px] lg:-translate-y-[189px]': !showNavbar }"
         class="fixed top-0 transition-transform duration-200 left-0 w-screen h-[90px] lg:h-[189px] bg-secondary-100 text-primary"
     >
-        <div class="container flex justify-between items-center w-full h-full">
+        <div class="container flex items-center justify-between w-full h-full">
             <Logo />
             <NavigationDesktop
                 class="hidden lg:flex"
@@ -24,7 +24,40 @@ const navigation = [
     {
         name: 'Test 1',
         link: '/',
-        children: null,
+        children: [
+            {
+                name: 'Child 1 lorem ipsum dolor',
+                link: '/',
+                children: [
+                    {
+                        name: 'Sub Child 1',
+                        link: '/',
+                        children: null,
+                    },
+                    {
+                        name: 'Sub Child 2',
+                        link: '/',
+                        children: null,
+                    },
+                ],
+            },
+            {
+                name: 'Child 2',
+                link: '/',
+                children: [
+                    {
+                        name: 'Sub Child 1',
+                        link: '/',
+                        children: null,
+                    },
+                    {
+                        name: 'Sub Child 2',
+                        link: '/',
+                        children: null,
+                    },
+                ],
+            },
+        ],
     },
     {
         name: 'Test 2',
@@ -38,12 +71,34 @@ const navigation = [
             {
                 name: 'Child 1 lorem ipsum dolor',
                 link: '/',
-                children: null,
+                children: [
+                    {
+                        name: 'Sub Child 1',
+                        link: '/',
+                        children: null,
+                    },
+                    {
+                        name: 'Sub Child 2',
+                        link: '/',
+                        children: null,
+                    },
+                ],
             },
             {
                 name: 'Child 2',
                 link: '/',
-                children: null,
+                children: [
+                    {
+                        name: 'Sub Child 1',
+                        link: '/',
+                        children: null,
+                    },
+                    {
+                        name: 'Sub Child 2',
+                        link: '/',
+                        children: null,
+                    },
+                ],
             },
         ],
     },
