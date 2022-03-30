@@ -1,5 +1,5 @@
 <template>
-    <footer class="bg-secondary-100 mt-auto w-screen py-12">
+    <footer class="w-screen py-12 mt-auto bg-footer">
         <div class="container">
             <h3>
                 <span class="inline-block">E-Mail</span> <br />
@@ -10,9 +10,9 @@
                 <span class="inline-block">Straße XYZ</span> <br />
                 <span class="inline-block">PLZ/ Stadt XYZ</span> <br />
             </div>
-            <ul class="flex justify-end pt-10 items-center gap-10">
+            <ul class="flex items-center justify-end gap-10 pt-10">
                 <li v-for="entry in navigation">
-                    <a :href="entry.link" class="text-primary font-semibold">
+                    <a :href="entry.link" class="font-semibold text-primary">
                         {{ entry.name }}
                     </a>
                 </li>

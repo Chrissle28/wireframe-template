@@ -20,6 +20,8 @@ module.exports = {
             danger: 'var(--color-danger)',
             section: 'var(--color-section)',
             text: 'var(--color-text)',
+            header: 'var(--color-header)',
+            footer: 'var(--color-footer)',
             primary: {
                 DEFAULT: 'var(--color-primary-default)',
                 100: 'var(--color-primary-100)',
