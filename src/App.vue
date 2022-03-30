@@ -35,13 +35,33 @@
             <Accordion :content="content" />
             <Input v-model="test" label="Label" placeholder="placeholder" />
             {{ test }}
-            <RadioGroup
-                v-model="radioSelected"
-                :options="radio"
-                labelKey="label"
-                valueKey="value"
-            />
-            {{ radioSelected }}
+            <div>
+                <RadioGroup
+                    v-model="radioSelected"
+                    :options="radio"
+                    labelKey="label"
+                    valueKey="value"
+                />
+                {{ radioSelected }}
+            </div>
+            <div>
+                <Checkbox
+                    v-model="checkboxSelected"
+                    value="10"
+                    label="Wert 10"
+                />
+                <Checkbox
+                    v-model="checkboxSelected"
+                    value="12"
+                    label="Wert 12"
+                />
+                <Checkbox
+                    v-model="checkboxSelected"
+                    value="14"
+                    label="Wert 14"
+                />
+                {{ checkboxSelected }}
+            </div>
         </div>
     </main>
     <Footer />
@@ -49,12 +69,21 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { Button, Accordion, Link, Input, RadioGroup } from './components/Ui';
+import {
+    Button,
+    Accordion,
+    Link,
+    Input,
+    RadioGroup,
+    Checkbox,
+} from './components/Ui';
 import Header from './components/Header/Header.vue';
 import Footer from './components/Footer/Footer.vue';
 
 const test = ref('');
 const radioSelected = ref();
+const checkboxSelected = ref([]);
+const checkboxSelected2 = ref(false);
 
 const radio = [
     {
