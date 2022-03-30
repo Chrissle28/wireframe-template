@@ -6,3 +6,4 @@ export { default as RadioGroup } from './RadioGroup.vue';
 export { default as Checkbox } from './Checkbox.vue';
 export { default as Select } from './Select.vue';
 export { default as Slider } from './Slider.vue';
+export { default as Modal } from './Modal.vue';

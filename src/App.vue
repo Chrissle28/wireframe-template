@@ -70,6 +70,10 @@
                 <Slider v-model="slider" min="0" max="100" />
                 {{ slider }}
             </div>
+            <div class="w-full">
+                <Button @click="modal = true"> Open Modal </Button>
+                <Modal lg v-model="modal"> Test </Modal>
+            </div>
         </div>
     </main>
     <Footer />
@@ -86,6 +90,7 @@ import {
     Checkbox,
     Select,
     Slider,
+    Modal,
 } from './components/Ui';
 import Header from './components/Header/Header.vue';
 import Footer from './components/Footer/Footer.vue';
@@ -93,7 +98,7 @@ import Footer from './components/Footer/Footer.vue';
 const test = ref('');
 const radioSelected = ref();
 const checkboxSelected = ref([]);
-const checkboxSelected2 = ref(false);
+const modal = ref(false);
 const select = ref({ value: null, preview: 'placeholder' });
 const slider = ref(50);
 
