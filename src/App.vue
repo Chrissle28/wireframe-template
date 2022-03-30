@@ -62,6 +62,10 @@
                 />
                 {{ checkboxSelected }}
             </div>
+            <div class="w-full">
+                <Select v-model="select" label="Select" :items="selectItems" />
+                {{ select }}
+            </div>
         </div>
     </main>
     <Footer />
@@ -76,6 +80,7 @@ import {
     Input,
     RadioGroup,
     Checkbox,
+    Select,
 } from './components/Ui';
 import Header from './components/Header/Header.vue';
 import Footer from './components/Footer/Footer.vue';
@@ -84,6 +89,22 @@ const test = ref('');
 const radioSelected = ref();
 const checkboxSelected = ref([]);
 const checkboxSelected2 = ref(false);
+const select = ref('');
+
+const selectItems = [
+    {
+        value: 10,
+        preview: 'Wert 10',
+    },
+    {
+        value: 11,
+        preview: 'Wert 11',
+    },
+    {
+        value: 12,
+        preview: 'Wert 12',
+    },
+];
 
 const radio = [
     {
