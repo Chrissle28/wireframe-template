@@ -19,6 +19,7 @@ module.exports = {
             warning: 'var(--color-warning)',
             danger: 'var(--color-danger)',
             section: 'var(--color-section)',
+            text: 'var(--color-text)',
             primary: {
                 DEFAULT: 'var(--color-primary-default)',
                 100: 'var(--color-primary-100)',
