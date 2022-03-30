@@ -64,7 +64,11 @@
             </div>
             <div class="w-full">
                 <Select v-model="select" label="Select" :items="selectItems" />
-                {{ select }}
+                {{ select.value }}
+            </div>
+            <div class="w-full">
+                <Slider v-model="slider" min="0" max="100" />
+                {{ slider }}
             </div>
         </div>
     </main>
@@ -81,6 +85,7 @@ import {
     RadioGroup,
     Checkbox,
     Select,
+    Slider,
 } from './components/Ui';
 import Header from './components/Header/Header.vue';
 import Footer from './components/Footer/Footer.vue';
@@ -89,7 +94,8 @@ const test = ref('');
 const radioSelected = ref();
 const checkboxSelected = ref([]);
 const checkboxSelected2 = ref(false);
-const select = ref('');
+const select = ref({ value: null, preview: 'placeholder' });
+const slider = ref(50);
 
 const selectItems = [
     {
