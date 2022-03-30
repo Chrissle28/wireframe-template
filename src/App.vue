@@ -35,6 +35,13 @@
             <Accordion :content="content" />
             <Input v-model="test" label="Label" placeholder="placeholder" />
             {{ test }}
+            <RadioGroup
+                v-model="radioSelected"
+                :options="radio"
+                labelKey="label"
+                valueKey="value"
+            />
+            {{ radioSelected }}
         </div>
     </main>
     <Footer />
@@ -42,11 +49,28 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { Button, Accordion, Link, Input } from './components/Ui';
+import { Button, Accordion, Link, Input, RadioGroup } from './components/Ui';
 import Header from './components/Header/Header.vue';
 import Footer from './components/Footer/Footer.vue';
 
 const test = ref('');
+const radioSelected = ref();
+
+const radio = [
+    {
+        label: 'Option 1',
+        value: 1,
+    },
+    {
+        label: 'Option 2',
+        value: 2,
+    },
+    {
+        label: 'Option 3',
+        value: 3,
+    },
+];
+radioSelected.value = radio[0].value;
 
 const content = [
     {
