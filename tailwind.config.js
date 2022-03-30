@@ -18,6 +18,7 @@ module.exports = {
             success: 'var(--color-success)',
             warning: 'var(--color-warning)',
             danger: 'var(--color-danger)',
+            section: 'var(--color-section)',
             primary: {
                 DEFAULT: 'var(--color-primary-default)',
                 100: 'var(--color-primary-100)',

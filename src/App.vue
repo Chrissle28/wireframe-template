@@ -75,12 +75,20 @@
                 <Modal lg v-model="modal"> Test </Modal>
             </div>
         </div>
+        <BackgroundSection>
+            <h2>Background Section</h2>
+            <div class="w-full">
+                <Slider v-model="slider" min="0" max="100" />
+                {{ slider }}
+            </div>
+        </BackgroundSection>
     </main>
     <Footer />
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { BackgroundSection } from './components/Container';
 import {
     Button,
     Accordion,
