@@ -82,6 +82,17 @@
                 {{ slider }}
             </div>
         </BackgroundSection>
+        <div class="container w-full my-16">
+            <div class="w-full mb-10 lg:w-1/2">
+                <Image :image="image" />
+            </div>
+            <div class="w-full mb-10 lg:w-1/2">
+                <VideoEmbed :video="video" />
+            </div>
+            <div class="w-full mb-10">
+                <ImageGallery :images="images" />
+            </div>
+        </div>
     </main>
     <Footer />
 </template>
@@ -89,6 +100,12 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { BackgroundSection } from './components/Container';
+import {
+    Image,
+    ImageGallery,
+    VideoEmbed,
+    ImageInterface,
+} from './components/Media';
 import {
     Button,
     Accordion,
@@ -109,6 +126,35 @@ const checkboxSelected = ref([]);
 const modal = ref(false);
 const select = ref({ value: null, preview: 'placeholder' });
 const slider = ref(50);
+const image: ImageInterface = {
+    id: 0,
+    original_url:
+        'https://images.unsplash.com/photo-1648602884790-4435152a69db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80',
+};
+const images = [
+    {
+        id: 0,
+        original_url:
+            'https://images.unsplash.com/photo-1648598200360-d77ba0fff312?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+    },
+    {
+        id: 1,
+        original_url:
+            'https://images.unsplash.com/photo-1648602884790-4435152a69db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80',
+    },
+    {
+        id: 2,
+        original_url:
+            'https://images.unsplash.com/photo-1648598200360-d77ba0fff312?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+    },
+    {
+        id: 3,
+        original_url:
+            'https://images.unsplash.com/photo-1648602884790-4435152a69db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80',
+    },
+];
+const video =
+    '<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>';
 
 const selectItems = [
     {

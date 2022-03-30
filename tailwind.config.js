@@ -44,6 +44,18 @@ module.exports = {
                 800: 'var(--color-secondary-800)',
                 900: 'var(--color-secondary-900)',
             },
+            gray: {
+                DEFAULT: 'var(--color-gray-default)',
+                100: 'var(--color-gray-100)',
+                200: 'var(--color-gray-200)',
+                300: 'var(--color-gray-300)',
+                400: 'var(--color-gray-400)',
+                500: 'var(--color-gray-500)',
+                600: 'var(--color-gray-600)',
+                700: 'var(--color-gray-700)',
+                800: 'var(--color-gray-800)',
+                900: 'var(--color-gray-900)',
+            },
         },
         fontSize: {
             xs: ['14px', '20px'],
