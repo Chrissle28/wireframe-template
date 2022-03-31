@@ -93,6 +93,54 @@
                 <ImageGallery :images="images" />
             </div>
         </div>
+        <div class="container w-full my-16">
+            <Carousel
+                v-model="carouselCurrent"
+                overflowHidden
+                v-if="images.length > 0"
+                dots
+            >
+                <Slide v-for="image in images">
+                    <div class="h-[400px] w-full">
+                        <Image :image="image" />
+                    </div>
+                </Slide>
+            </Carousel>
+        </div>
+        <div class="container w-full my-16">
+            <Carousel
+                v-model="carouselCurrent"
+                overflowHidden
+                v-if="images.length > 0"
+                dots
+            >
+                <Slide v-for="image in images">
+                    <div class="h-[400px] w-full">
+                        <Image :image="image" />
+                    </div>
+                </Slide>
+            </Carousel>
+        </div>
+        <div class="container w-full my-16">
+            <Carousel :options="carouselOptionsX" v-if="images.length > 0" dots>
+                <Slide
+                    :slidesInView="{
+                        sm: 1,
+                        md: 1,
+                        lg: 2,
+                        xl: 3,
+                        '2xl': 4,
+                    }"
+                    v-for="image in images"
+                >
+                    <div
+                        class="h-[400px] w-full shadow-lg bg-white rounded p-6"
+                    >
+                        Test
+                    </div>
+                </Slide>
+            </Carousel>
+        </div>
     </main>
     <Footer />
 </template>
@@ -116,6 +164,8 @@ import {
     Select,
     Slider,
     Modal,
+    Carousel,
+    Slide,
 } from './components/Ui';
 import Header from './components/Header/Header.vue';
 import Footer from './components/Footer/Footer.vue';
@@ -126,6 +176,49 @@ const checkboxSelected = ref([]);
 const modal = ref(false);
 const select = ref({ value: null, preview: 'placeholder' });
 const slider = ref(50);
+const array = [];
+const carouselCurrent = ref(0);
+
+const carouselOptions = ref({
+    slidesToScroll: 1,
+    speed: 6,
+    align: 'start',
+    containScroll: 'trimSnaps',
+});
+
+const carouselOptionsX = {
+    sm: {
+        slidesToScroll: 1,
+        speed: 6,
+        align: 'start',
+        containScroll: 'trimSnaps',
+    },
+    md: {
+        slidesToScroll: 1,
+        speed: 6,
+        align: 'start',
+        containScroll: 'trimSnaps',
+    },
+    lg: {
+        slidesToScroll: 2,
+        speed: 6,
+        align: 'start',
+        containScroll: 'trimSnaps',
+    },
+    xl: {
+        slidesToScroll: 3,
+        speed: 6,
+        align: 'start',
+        containScroll: 'trimSnaps',
+    },
+    '2xl': {
+        slidesToScroll: 4,
+        speed: 6,
+        align: 'start',
+        containScroll: 'trimSnaps',
+    },
+};
+
 const image: ImageInterface = {
     id: 0,
     original_url:
@@ -149,6 +242,16 @@ const images = [
     },
     {
         id: 3,
+        original_url:
+            'https://images.unsplash.com/photo-1648602884790-4435152a69db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80',
+    },
+    {
+        id: 4,
+        original_url:
+            'https://images.unsplash.com/photo-1648598200360-d77ba0fff312?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+    },
+    {
+        id: 5,
         original_url:
             'https://images.unsplash.com/photo-1648602884790-4435152a69db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80',
     },

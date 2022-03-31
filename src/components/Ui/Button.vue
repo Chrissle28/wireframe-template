@@ -6,14 +6,13 @@
         :class="{
             'px-5': !square,
             'px-2.5': square,
-            'pointer-events-none border-secondary-100': disabled,
             'text-white border-primary bg-primary':
                 variant_ == 'primary' && !secondary && !disabled,
-            'text-white bg-secondary-100':
+            'text-white pointer-events-none border-primary bg-primary opacity-40':
                 variant_ == 'primary' && !secondary && disabled,
             'text-primary border-primary bg-white':
                 variant_ == 'secondary' && !primary && !disabled,
-            'text-secondary-100 border-secondary-100 bg-transparent':
+            'text-primary opacity-40 pointer-events-none border-primary bg-white':
                 variant_ == 'secondary' && !primary && disabled,
         }"
     >
