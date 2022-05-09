@@ -1,4 +1,3 @@
-export { default as Button } from './Button.vue';
 export { default as ButtonPrimary } from './ButtonPrimary.vue';
 export { default as ButtonSecondary } from './ButtonSecondary.vue';
 export { default as Accordion } from './Accordion.vue';
