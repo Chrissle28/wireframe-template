@@ -24,39 +24,18 @@ module.exports = {
             footer: 'var(--color-footer)',
             primary: {
                 DEFAULT: 'var(--color-primary-default)',
-                100: 'var(--color-primary-100)',
-                200: 'var(--color-primary-200)',
-                300: 'var(--color-primary-300)',
-                400: 'var(--color-primary-400)',
-                500: 'var(--color-primary-500)',
-                600: 'var(--color-primary-600)',
-                700: 'var(--color-primary-700)',
-                800: 'var(--color-primary-800)',
-                900: 'var(--color-primary-900)',
+                light: 'var(--color-primary-light)',
+                dark: 'var(--color-primary-dark)',
             },
             secondary: {
                 DEFAULT: 'var(--color-secondary-default)',
-                100: 'var(--color-secondary-100)',
-                200: 'var(--color-secondary-200)',
-                300: 'var(--color-secondary-300)',
-                400: 'var(--color-secondary-400)',
-                500: 'var(--color-secondary-500)',
-                600: 'var(--color-secondary-600)',
-                700: 'var(--color-secondary-700)',
-                800: 'var(--color-secondary-800)',
-                900: 'var(--color-secondary-900)',
+                light: 'var(--color-secondary-light)',
+                dark: 'var(--color-secondary-dark)',
             },
-            gray: {
-                DEFAULT: 'var(--color-gray-default)',
-                100: 'var(--color-gray-100)',
-                200: 'var(--color-gray-200)',
-                300: 'var(--color-gray-300)',
-                400: 'var(--color-gray-400)',
-                500: 'var(--color-gray-500)',
-                600: 'var(--color-gray-600)',
-                700: 'var(--color-gray-700)',
-                800: 'var(--color-gray-800)',
-                900: 'var(--color-gray-900)',
+            tertiary: {
+                DEFAULT: 'var(--color-tertiary-default)',
+                light: 'var(--color-tertiary-light)',
+                dark: 'var(--color-tertiary-dark)',
             },
         },
         fontSize: {
@@ -73,7 +52,7 @@ module.exports = {
         plugin(function ({ addBase, theme }) {
             addBase({
                 body: {
-                    '@apply text-secondary-900 text-base': {},
+                    '@apply text-secondary-dark text-base': {},
                 },
                 'h1, h2, h3, h4, p': {
                     maxWidth: '700px',

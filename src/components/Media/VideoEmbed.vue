@@ -15,10 +15,10 @@
         ></div>
         <div
             v-else
-            class="absolute top-0 left-0 flex items-center justify-center w-full h-full border-2 border-gray"
+            class="absolute top-0 left-0 flex items-center justify-center w-full h-full border-2 border-tertiary"
         >
             <div
-                class="flex items-center justify-center w-8 h-8 border-2 border-gray-900 rounded-full"
+                class="flex items-center justify-center w-8 h-8 border-2 rounded-full border-tertiary-dark"
             >
                 <svg
                     width="24"

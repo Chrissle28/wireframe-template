@@ -16,10 +16,10 @@
             <div class="flex gap-2">
                 <div class="flex">
                     <div
-                        class="flex items-center focus:ring-4 cursor-pointer focus:ring-primary-200 justify-center bg-white w-[17px] h-[17px] border-2 rounded-lg"
+                        class="flex items-center focus:ring-4 cursor-pointer focus:ring-primary-light justify-center bg-white w-[17px] h-[17px] border-2 rounded-lg"
                         :class="{
-                            'border-primary-200': !disabled,
-                            'border-secondary-100': disabled,
+                            'border-primary-light': !disabled,
+                            'border-secondary-light': disabled,
                         }"
                     >
                         <div
@@ -34,7 +34,7 @@
                 <RadioGroupLabel
                     as="span"
                     class="flex-1 leading-none cursor-pointer"
-                    :class="{ 'text-gray-500': disabled }"
+                    :class="{ 'text-tertiary': disabled }"
                 >
                     {{ optionLabel(option) }}
                 </RadioGroupLabel>

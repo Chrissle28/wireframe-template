@@ -9,7 +9,7 @@
         />
         <div
             v-else
-            class="flex flex-col items-center justify-center w-full h-full min-h-[300px] border-2 border-gray"
+            class="flex flex-col items-center justify-center w-full h-full min-h-[300px] border-2 border-tertiary"
         >
             <svg
                 width="24"

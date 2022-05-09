@@ -1,9 +1,9 @@
 <template>
     <label class="w-full">
         <span class="inline-block">{{ label }}</span>
-        <div class="py-1.5 px-2 w-full bg-secondary-100">
+        <div class="py-1.5 px-2 w-full bg-secondary-light">
             <input
-                class="placeholder:text-secondary focus:outline-none bg-secondary-100"
+                class="placeholder:text-secondary focus:outline-none bg-secondary-light"
                 :placeholder="placeholder"
                 v-bind="$attrs"
                 :value="modelValue"

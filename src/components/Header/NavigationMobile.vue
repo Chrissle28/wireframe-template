@@ -3,18 +3,18 @@
         <button @click="menuOpen = !menuOpen" class="relative w-6 h-5">
             <span
                 :class="{ 'top-1/2 rotate-45': menuOpen, 'top-0': !menuOpen }"
-                class="inline-block bg-secondary-900 transition-all duration-300 w-full h-0.5 absolute left-0"
+                class="inline-block bg-secondary-dark transition-all duration-300 w-full h-0.5 absolute left-0"
             ></span>
             <span
                 :class="{ 'opacity-0': menuOpen, 'opacity-1': !menuOpen }"
-                class="inline-block bg-secondary-900 transition-opacity duration-300 w-full h-0.5 absolute left-0 top-1/2"
+                class="inline-block bg-secondary-dark transition-opacity duration-300 w-full h-0.5 absolute left-0 top-1/2"
             ></span>
             <span
                 :class="{
                     'top-1/2 -rotate-45': menuOpen,
                     'top-full': !menuOpen,
                 }"
-                class="inline-block bg-secondary-900 transition-all duration-300 w-full h-0.5 absolute left-0"
+                class="inline-block bg-secondary-dark transition-all duration-300 w-full h-0.5 absolute left-0"
             ></span>
         </button>
         <Transition
@@ -27,7 +27,7 @@
         >
             <div
                 v-if="menuOpen"
-                class="fixed z-50 bg-secondary-100 py-10 overflow-y-auto top-[90px] left-0 w-screen"
+                class="fixed z-50 bg-secondary-light py-10 overflow-y-auto top-[90px] left-0 w-screen"
                 style="height: calc(100vh - 90px)"
             >
                 <ul class="container flex flex-col gap-8">

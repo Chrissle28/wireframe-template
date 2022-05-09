@@ -7,7 +7,7 @@
             v-slot="{ open }"
         >
             <DisclosureButton
-                class="flex items-center justify-between w-full p-5 bg-secondary-100"
+                class="flex items-center justify-between w-full p-5 bg-secondary-light"
             >
                 <h3 class="m-0">
                     {{ item.title }}
@@ -26,7 +26,7 @@
                     </svg>
                 </Button>
             </DisclosureButton>
-            <DisclosurePanel class="px-5 border border-secondary-100 py-7">
+            <DisclosurePanel class="px-5 border border-secondary-light py-7">
                 <!-- TODO: Block Interpreter later -->
                 <div v-html="item.content"></div>
             </DisclosurePanel>

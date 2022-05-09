@@ -2,7 +2,7 @@
     <component
         :is="getTag()"
         :href="routeUrl"
-        class="font-semibold inline-flex items-center focus:outline-none focus:ring-4 focus:ring-primary-200 justify-center py-2.5 border-2"
+        class="font-semibold inline-flex items-center focus:outline-none focus:ring-4 focus:ring-primary-light justify-center py-2.5 border-2"
         :class="{
             'px-5': !square,
             'px-2.5': square,

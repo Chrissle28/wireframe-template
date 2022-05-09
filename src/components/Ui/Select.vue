@@ -6,13 +6,13 @@
         <Listbox v-model="selectedItem">
             <div class="relative w-full">
                 <ListboxButton
-                    class="relative z-10 w-full h-10 px-2.5 text-xs text-left bg-secondary-100 cursor-default focus:outline-none focus:ring-2 focus:ring-primary-200"
+                    class="relative z-10 w-full h-10 px-2.5 text-xs text-left bg-secondary-light cursor-default focus:outline-none focus:ring-2 focus:ring-primary-200"
                 >
                     <span
                         :class="
                             modelValue.value == ''
                                 ? 'text-secondary'
-                                : 'text-secondary-900'
+                                : 'text-secondary-dark'
                         "
                         class="block truncate"
                         >{{ modelValue.preview }}</span
@@ -34,7 +34,7 @@
                 </ListboxButton>
 
                 <ListboxOptions
-                    class="absolute z-30 w-full overflow-auto text-xs bg-white border-2 border-secondary-100 max-h-56 focus:outline-none"
+                    class="absolute z-30 w-full overflow-auto text-xs bg-white border-2 border-secondary-light max-h-56 focus:outline-none"
                 >
                     <ListboxOption
                         v-slot="{ active, selected }"
@@ -47,7 +47,7 @@
                         <li
                             :class="[
                                 active
-                                    ? 'text-secondary-900 bg-secondary-100'
+                                    ? 'text-secondary-dark bg-secondary-light'
                                     : 'text-secondary',
                                 'cursor-default select-none relative mb-1',
                             ]"
@@ -55,7 +55,7 @@
                             <span
                                 :class="[
                                     selected
-                                        ? 'text-secondary-900 bg-secondary-100'
+                                        ? 'text-secondary-dark bg-secondary-light'
                                         : 'text-secondary',
                                     'block truncate py-1 px-2',
                                 ]"
