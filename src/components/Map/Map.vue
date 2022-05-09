@@ -1,13 +1,15 @@
 <template>
-    <div class="w-full h-[433px] lg:h-[675px] border-2 border-primary-200">
+    <div class="w-full h-[433px] lg:h-[675px] border-2 border-primary-light">
         <div
             v-if="!scriptLoaded"
-            class="flex flex-col items-center justify-center h-full text-red-500"
+            class="flex flex-col items-center justify-center h-full text-danger"
         >
-            <div class="pb-2 text-grey-500">
+            <div class="pb-2 text-tertiary">
                 I agree to the use of Google Maps.
             </div>
-            <Button outline @click="acceptCookies">Show Map</Button>
+            <ButtonPrimary outline @click="acceptCookies"
+                >Show Map</ButtonPrimary
+            >
         </div>
         <div v-if="mapId" class="h-full -mx-5 md:mx-0" :id="mapId"></div>
     </div>
@@ -15,7 +17,7 @@
 
 <script lang="ts" setup>
 import { computed, onMounted, PropType, ref } from 'vue';
-import { Button } from '../Ui';
+import { ButtonPrimary } from '../Ui';
 import { useStyles, init } from './modules';
 
 interface Marker extends google.maps.Marker {

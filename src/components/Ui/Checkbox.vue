@@ -9,7 +9,7 @@
             v-bind="$attrs"
         />
         <div
-            class="z-0 flex items-center text-primary justify-center flex-shrink-0 w-[17px] h-[17px] mr-2 border-2 border-primary-200"
+            class="z-0 flex items-center text-primary justify-center flex-shrink-0 w-[17px] h-[17px] mr-2 border-2 border-primary-light"
         >
             <svg
                 :class="checked ? 'block' : 'hidden'"
@@ -71,6 +71,6 @@ const check = () => {
 
 <style scoped>
 input:focus + div {
-    box-shadow: 0px 0 0 2px var(--color-primary-200);
+    box-shadow: 0px 0 0 2px var(--color-primary-light);
 }
 </style>

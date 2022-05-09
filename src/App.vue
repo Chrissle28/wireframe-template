@@ -2,11 +2,11 @@
     <Header />
     <main class="mt-[90px] lg:mt-[189px]">
         <div class="container flex flex-wrap gap-5 py-20">
-            <Button href="/test" primary> Lorem </Button>
-            <Button secondary> Lorem </Button>
-            <Button primary disabled> Lorem </Button>
-            <Button secondary disabled> Lorem </Button>
-            <Button primary square>
+            <ButtonPrimary href="/test" primary> Lorem </ButtonPrimary>
+            <ButtonPrimary outlined> Lorem </ButtonPrimary>
+            <ButtonPrimary disabled> Lorem </ButtonPrimary>
+            <ButtonPrimary outlined disabled> Lorem </ButtonPrimary>
+            <ButtonPrimary square>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="-8 -5 24 24"
@@ -17,8 +17,8 @@
                         d="M5.314 7.071l-4.95-4.95A1 1 0 0 1 1.778.707l5.657 5.657a1 1 0 0 1 0 1.414l-5.657 5.657a1 1 0 0 1-1.414-1.414l4.95-4.95z"
                     ></path>
                 </svg>
-            </Button>
-            <Button secondary square>
+            </ButtonPrimary>
+            <ButtonPrimary outlined square>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="-8 -5 24 24"
@@ -29,8 +29,36 @@
                         d="M5.314 7.071l-4.95-4.95A1 1 0 0 1 1.778.707l5.657 5.657a1 1 0 0 1 0 1.414l-5.657 5.657a1 1 0 0 1-1.414-1.414l4.95-4.95z"
                     ></path>
                 </svg>
-            </Button>
+            </ButtonPrimary>
             <Link href="/test"> Test </Link>
+            <ButtonSecondary href="/test">Foo</ButtonSecondary>
+            <ButtonSecondary outlined>Foo</ButtonSecondary>
+            <ButtonSecondary disabled>Foo</ButtonSecondary>
+            <ButtonSecondary outlined disabled>Foo</ButtonSecondary>
+            <ButtonSecondary square>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-8 -5 24 24"
+                    width="24"
+                    fill="currentColor"
+                >
+                    <path
+                        d="M5.314 7.071l-4.95-4.95A1 1 0 0 1 1.778.707l5.657 5.657a1 1 0 0 1 0 1.414l-5.657 5.657a1 1 0 0 1-1.414-1.414l4.95-4.95z"
+                    ></path>
+                </svg>
+            </ButtonSecondary>
+            <ButtonSecondary outlined square>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-8 -5 24 24"
+                    width="24"
+                    fill="currentColor"
+                >
+                    <path
+                        d="M5.314 7.071l-4.95-4.95A1 1 0 0 1 1.778.707l5.657 5.657a1 1 0 0 1 0 1.414l-5.657 5.657a1 1 0 0 1-1.414-1.414l4.95-4.95z"
+                    ></path>
+                </svg>
+            </ButtonSecondary>
             <!--<Map :zoom="4" :lat="10" :lng="52" />-->
             <Accordion :content="content" />
             <Input v-model="test" label="Label" placeholder="placeholder" />
@@ -71,7 +99,9 @@
                 {{ slider }}
             </div>
             <div class="w-full">
-                <Button @click="modal = true"> Open Modal </Button>
+                <ButtonPrimary @click="modal = true">
+                    Open Modal
+                </ButtonPrimary>
                 <Modal lg v-model="modal"> Test </Modal>
             </div>
         </div>
@@ -156,6 +186,8 @@ import {
 } from './components/Media';
 import {
     Button,
+    ButtonPrimary,
+    ButtonSecondary,
     Accordion,
     Link,
     Input,

@@ -12,11 +12,11 @@
         <div
             class="z-20 items-center justify-between hidden gap-6 mt-6 md:flex"
         >
-            <Button
+            <ButtonPrimary
                 v-if="embla && buttons"
                 @click="embla?.scrollPrev()"
                 square
-                secondary
+                outlined
                 :disabled="!prevBtnEnabled"
             >
                 <svg
@@ -29,7 +29,7 @@
                         d="M2.757 7l4.95 4.95a1 1 0 1 1-1.414 1.414L.636 7.707a1 1 0 0 1 0-1.414L6.293.636A1 1 0 0 1 7.707 2.05L2.757 7z"
                     ></path>
                 </svg>
-            </Button>
+            </ButtonPrimary>
             <div
                 v-if="dots && scrollSnaps.length > 1"
                 class="flex embla__dots gap-3.5"
@@ -40,15 +40,15 @@
                     class="w-3.5 h-3.5 rounded-full embla__dot"
                     :class="{
                         'bg-primary': i === selectedScrollSnap,
-                        'bg-primary-200': i !== selectedScrollSnap,
+                        'bg-primary-light': i !== selectedScrollSnap,
                     }"
                 ></button>
             </div>
-            <Button
+            <ButtonPrimary
                 v-if="embla && buttons"
                 @click="embla?.scrollNext()"
                 square
-                secondary
+                outlined
                 :disabled="!nextBtnEnabled"
             >
                 <svg
@@ -61,7 +61,7 @@
                         d="M5.314 7.071l-4.95-4.95A1 1 0 0 1 1.778.707l5.657 5.657a1 1 0 0 1 0 1.414l-5.657 5.657a1 1 0 0 1-1.414-1.414l4.95-4.95z"
                     ></path>
                 </svg>
-            </Button>
+            </ButtonPrimary>
         </div>
     </div>
 </template>
@@ -69,7 +69,7 @@
 <script lang="ts" setup>
 import { computed, onMounted, Ref, ref, toRef, watch } from 'vue';
 import EmblaCarousel, { EmblaCarouselType } from 'embla-carousel';
-import { Button } from '../';
+import { ButtonPrimary } from '../';
 import { isBetween, breakpoints } from './carousel';
 
 const emit = defineEmits(['update:modelValue']);

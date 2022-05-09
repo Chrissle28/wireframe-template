@@ -6,14 +6,12 @@
         :class="{
             'px-5': !square,
             'px-2.5': square,
-            'text-white border-primary bg-primary':
-                variant_ == 'primary' && !secondary && !disabled,
+            'text-white border-primary bg-primary': !disabled && !outlined,
             'text-white pointer-events-none border-primary bg-primary opacity-40':
-                variant_ == 'primary' && !secondary && disabled,
-            'text-primary border-primary bg-white':
-                variant_ == 'secondary' && !primary && !disabled,
-            'text-primary opacity-40 pointer-events-none border-primary bg-white':
-                variant_ == 'secondary' && !primary && disabled,
+                disabled && !outlined,
+            'text-primary border-primary bg-white': !disabled && outlined,
+            'text-primary pointer-events-none border-primary bg-white opacity-40':
+                disabled && outlined,
         }"
     >
         <slot />
@@ -28,17 +26,13 @@ const props = defineProps({
         default: false,
         type: Boolean,
     },
-    primary: {
-        type: Boolean,
-        default: false,
-    },
-    secondary: {
-        type: Boolean,
-        default: false,
-    },
     route: {
         type: String,
         default: null,
+    },
+    outlined: {
+        type: Boolean,
+        default: false,
     },
     square: {
         default: false,
@@ -46,23 +40,8 @@ const props = defineProps({
     },
 });
 
-const getVariant = (props: any) => {
-    return computed(() => {
-        if (props.primary) {
-            return 'primary';
-        }
-        if (props.secondary) {
-            return 'secondary';
-        }
-        return 'primary';
-    });
-};
-
-const variant_ = getVariant(props);
-
 const attrs = useAttrs();
 
-const tag = 'href' in attrs ? 'a' : 'button';
 const getTag = () => {
     if ('href' in attrs || props.route) {
         if (attrs.target == '_blank') {

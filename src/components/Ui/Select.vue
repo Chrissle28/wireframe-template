@@ -6,7 +6,7 @@
         <Listbox v-model="selectedItem">
             <div class="relative w-full">
                 <ListboxButton
-                    class="relative z-10 w-full h-10 px-2.5 text-xs text-left bg-secondary-light cursor-default focus:outline-none focus:ring-2 focus:ring-primary-200"
+                    class="relative z-10 w-full h-10 px-2.5 text-xs text-left bg-secondary-light cursor-default focus:outline-none focus:ring-2 focus:ring-primary-light"
                 >
                     <span
                         :class="
