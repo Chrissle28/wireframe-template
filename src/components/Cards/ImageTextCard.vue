@@ -3,22 +3,29 @@
         <div v-if="image" class="w-full h-52">
             <img class="object-cover w-full h-full" :src="image" :alt="title" />
         </div>
-        <div class="p-8">
-            <div class="text-lg font-semibold">
+        <div class="flex flex-col p-8" :class="{ 'h-full': !image }">
+            <div class="mb-2 text-lg font-semibold">
                 {{ title }}
             </div>
             <div>
                 {{ description }}
             </div>
-            <ButtonSecondary class="mt-10" :href="link" outlined>
-                {{ linkText }}
-            </ButtonSecondary>
+            <div
+                :class="{
+                    'mt-auto': !image,
+                    'mt-10': image,
+                }"
+            >
+                <ButtonPrimary :href="link" outlined>
+                    {{ linkText }}
+                </ButtonPrimary>
+            </div>
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
-import { ButtonSecondary } from '../Ui';
+import { ButtonPrimary } from '../Ui';
 
 const props = defineProps({
     image: {

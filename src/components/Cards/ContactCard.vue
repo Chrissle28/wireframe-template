@@ -10,7 +10,7 @@
                 :alt="contact.name"
             />
         </div>
-        <div class="text-lg text-primary">
+        <div class="mb-3 text-lg font-semibold text-primary">
             {{ contact.name }}
         </div>
         <div class="mb-4">

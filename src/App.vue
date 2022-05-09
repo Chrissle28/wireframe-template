@@ -174,6 +174,7 @@
         <div class="container w-full my-16">
             <div class="grid grid-cols-3 gap-5">
                 <ContactCard :contact="contact" />
+                <AnnouncementCard :announcement="announcement" />
                 <ImageTextCard
                     title="Test"
                     description="Lorem Ipsum"
@@ -195,7 +196,11 @@ import {
     VideoEmbed,
     ImageInterface,
 } from './components/Media';
-import { ContactCard, ImageTextCard } from './components/Cards';
+import {
+    ContactCard,
+    ImageTextCard,
+    AnnouncementCard,
+} from './components/Cards';
 import {
     ButtonPrimary,
     ButtonSecondary,
@@ -232,9 +237,18 @@ const carouselOptions = ref({
 const contact = reactive({
     image: 'https://images.unsplash.com/photo-1652060582510-c9e4c48dad54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80',
     name: 'Max Mustermann',
-    description: 'Lorem Ipsum',
+    description:
+        'text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat',
     phone: '023820348239',
     email: 'test@test.com',
+});
+
+const announcement = reactive({
+    image: 'https://images.unsplash.com/photo-1652060582510-c9e4c48dad54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80',
+    title: 'title Lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
+    description:
+        'text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat',
+    date: '01.01.1970',
 });
 
 const carouselOptionsX = {
