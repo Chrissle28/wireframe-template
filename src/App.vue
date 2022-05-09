@@ -174,6 +174,12 @@
         <div class="container w-full my-16">
             <div class="grid grid-cols-3 gap-5">
                 <ContactCard :contact="contact" />
+                <ImageTextCard
+                    title="Test"
+                    description="Lorem Ipsum"
+                    link="https://test.de"
+                    image="https://images.unsplash.com/photo-1652060582510-c9e4c48dad54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80"
+                />
             </div>
         </div>
     </main>
@@ -189,7 +195,7 @@ import {
     VideoEmbed,
     ImageInterface,
 } from './components/Media';
-import { ContactCard } from './components/Cards';
+import { ContactCard, ImageTextCard } from './components/Cards';
 import {
     ButtonPrimary,
     ButtonSecondary,
