@@ -1,4 +1,5 @@
 <template>
+    <!-- TODO: Add active state to navigation later on -->
     <div class="flex flex-col justify-between">
         <!-- Only if app is translatable -->
         <!-- <div class="flex justify-end">
