@@ -1,102 +1,113 @@
 <template>
-    <ul
-        v-click-outside="hideNavigation"
-        ref="desktop_nav"
-        class="hidden lg:flex items-end h-[100px] flex-wrap gap-10"
-    >
-        <li v-for="(entry, i) in navigation">
-            <a
-                v-if="!hasChildren(entry)"
-                :href="entry.link"
-                class="font-semibold"
-            >
-                {{ entry.name }}
-            </a>
-            <div class="relative" v-if="hasChildren(entry)">
-                <button
-                    @click="toggleSubnavLevel1(i, 'bottom')"
-                    class="flex items-center gap-2 font-semibold"
-                    :class="`nav-button-${i}`"
+    <div class="flex flex-col justify-between">
+        <!-- Only if app is translatable -->
+        <!-- <div class="flex justify-end">
+            <Localizer />
+        </div> -->
+        <ul
+            v-click-outside="hideNavigation"
+            ref="desktop_nav"
+            class="hidden lg:flex items-end h-[100px] flex-wrap gap-10"
+        >
+            <li v-for="(entry, i) in navigation">
+                <a
+                    v-if="!hasChildren(entry)"
+                    :href="entry.link"
+                    class="font-semibold"
                 >
-                    <span>{{ entry.name }}</span>
-                    <svg
-                        v-if="hasChildren(entry)"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="-5 -8 24 24"
-                        width="16"
-                        fill="currentColor"
-                        class="transition-transform duration-300"
+                    {{ entry.name }}
+                </a>
+                <div class="relative" v-if="hasChildren(entry)">
+                    <button
+                        @click="toggleSubnavLevel1(i, 'bottom')"
+                        class="flex items-center gap-2 font-semibold"
+                        :class="`nav-button-${i}`"
                     >
-                        <path
-                            d="M7.071 5.314l4.95-4.95a1 1 0 1 1 1.414 1.414L7.778 7.435a1 1 0 0 1-1.414 0L.707 1.778A1 1 0 1 1 2.121.364l4.95 4.95z"
-                        ></path>
-                    </svg>
-                </button>
-                <div class="absolute hidden sub-nav-1">
-                    <div class="arrow"></div>
-                    <ul
-                        class="relative text-left min-w-[240px] bg-secondary p-4 flex flex-col gap-5"
-                    >
-                        <li as="li" v-for="(child, j) in entry.children">
-                            <a
-                                v-if="!hasChildren(child)"
-                                :href="child.link"
-                                class="font-semibold text-white"
-                            >
-                                {{ child.name }}
-                            </a>
-                            <div class="relative" v-if="hasChildren(child)">
-                                <button
-                                    @click="
-                                        toggleSubnavLevel2(i, j, 'right-start')
-                                    "
-                                    class="flex justify-between w-full gap-2 font-semibold text-left text-white"
-                                    :class="`nav-button-${i}-${j}`"
+                        <span>{{ entry.name }}</span>
+                        <svg
+                            v-if="hasChildren(entry)"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="-5 -8 24 24"
+                            width="16"
+                            fill="currentColor"
+                            class="transition-transform duration-300"
+                        >
+                            <path
+                                d="M7.071 5.314l4.95-4.95a1 1 0 1 1 1.414 1.414L7.778 7.435a1 1 0 0 1-1.414 0L.707 1.778A1 1 0 1 1 2.121.364l4.95 4.95z"
+                            ></path>
+                        </svg>
+                    </button>
+                    <div class="absolute hidden sub-nav-1">
+                        <div class="arrow"></div>
+                        <ul
+                            class="relative text-left min-w-[240px] bg-secondary p-4 flex flex-col gap-5"
+                        >
+                            <li as="li" v-for="(child, j) in entry.children">
+                                <a
+                                    v-if="!hasChildren(child)"
+                                    :href="child.link"
+                                    class="font-semibold text-white"
                                 >
-                                    <span>{{ child.name }}</span>
-                                    <svg
-                                        v-if="hasChildren(child)"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="-5 -8 24 24"
-                                        width="16"
-                                        fill="currentColor"
-                                        class="pt-1.5 transition-transform duration-300"
+                                    {{ child.name }}
+                                </a>
+                                <div class="relative" v-if="hasChildren(child)">
+                                    <button
+                                        @click="
+                                            toggleSubnavLevel2(
+                                                i,
+                                                j,
+                                                'right-start'
+                                            )
+                                        "
+                                        class="flex justify-between w-full gap-2 font-semibold text-left text-white"
+                                        :class="`nav-button-${i}-${j}`"
                                     >
-                                        <path
-                                            d="M7.071 5.314l4.95-4.95a1 1 0 1 1 1.414 1.414L7.778 7.435a1 1 0 0 1-1.414 0L.707 1.778A1 1 0 1 1 2.121.364l4.95 4.95z"
-                                        ></path>
-                                    </svg>
-                                </button>
-                                <div class="absolute hidden sub-nav-2">
-                                    <div class="arrow"></div>
-                                    <ul
-                                        class="relative text-left min-w-[240px] bg-secondary p-4 flex flex-col gap-5"
-                                    >
-                                        <li
-                                            as="li"
-                                            v-for="subChild in child.children"
+                                        <span>{{ child.name }}</span>
+                                        <svg
+                                            v-if="hasChildren(child)"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="-5 -8 24 24"
+                                            width="16"
+                                            fill="currentColor"
+                                            class="pt-1.5 transition-transform duration-300"
                                         >
-                                            <a
-                                                :href="subChild.link"
-                                                class="font-semibold text-white"
+                                            <path
+                                                d="M7.071 5.314l4.95-4.95a1 1 0 1 1 1.414 1.414L7.778 7.435a1 1 0 0 1-1.414 0L.707 1.778A1 1 0 1 1 2.121.364l4.95 4.95z"
+                                            ></path>
+                                        </svg>
+                                    </button>
+                                    <div class="absolute hidden sub-nav-2">
+                                        <div class="arrow"></div>
+                                        <ul
+                                            class="relative text-left min-w-[240px] bg-secondary p-4 flex flex-col gap-5"
+                                        >
+                                            <li
+                                                as="li"
+                                                v-for="subChild in child.children"
                                             >
-                                                {{ subChild.name }}
-                                            </a>
-                                        </li>
-                                    </ul>
+                                                <a
+                                                    :href="subChild.link"
+                                                    class="font-semibold text-white"
+                                                >
+                                                    {{ subChild.name }}
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </li>
-    </ul>
+            </li>
+        </ul>
+    </div>
 </template>
 
 <script lang="ts" setup>
 import { computePosition, flip, shift, offset, arrow } from '@floating-ui/dom';
-import { onBeforeUnmount, onMounted, ref } from 'vue';
+import { ref } from 'vue';
+import Localizer from './Localizer.vue';
 
 const props = defineProps({
     navigation: {
