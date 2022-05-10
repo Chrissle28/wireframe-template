@@ -32,12 +32,16 @@
             >
                 <ul class="container flex flex-col gap-8">
                     <li v-for="entry in navigation">
-                        <a v-if="!hasChildren(entry)" :href="entry.link">
+                        <a
+                            v-if="!hasChildren(entry)"
+                            class="font-semibold"
+                            :href="entry.link"
+                        >
                             {{ entry.name }}
                         </a>
                         <Disclosure v-slot="{ open }" v-if="hasChildren(entry)">
                             <DisclosureButton
-                                class="flex items-center justify-between gap-4"
+                                class="flex items-center justify-between gap-4 font-semibold"
                             >
                                 <span>
                                     {{ entry.name }}
@@ -58,9 +62,57 @@
                             <DisclosurePanel>
                                 <ul class="flex flex-col gap-8 mt-8 ml-8">
                                     <li v-for="child in entry.children">
-                                        <a :href="child.link">
-                                            {{ entry.name }}
+                                        <a
+                                            :href="child.link"
+                                            v-if="!hasChildren(child)"
+                                            class="font-semibold"
+                                        >
+                                            {{ child.name }}
                                         </a>
+                                        <Disclosure
+                                            v-slot="{ open }"
+                                            v-if="hasChildren(child)"
+                                        >
+                                            <DisclosureButton
+                                                class="flex items-center justify-between gap-4 font-semibold"
+                                            >
+                                                <span>
+                                                    {{ child.name }}
+                                                </span>
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="-5 -8 24 24"
+                                                    width="16"
+                                                    fill="currentColor"
+                                                    class="transition-transform duration-300"
+                                                    :class="{
+                                                        'rotate-180': open,
+                                                    }"
+                                                >
+                                                    <path
+                                                        d="M7.071 5.314l4.95-4.95a1 1 0 1 1 1.414 1.414L7.778 7.435a1 1 0 0 1-1.414 0L.707 1.778A1 1 0 1 1 2.121.364l4.95 4.95z"
+                                                    ></path>
+                                                </svg>
+                                            </DisclosureButton>
+                                            <DisclosurePanel>
+                                                <ul
+                                                    class="flex flex-col gap-8 mt-8 ml-8"
+                                                >
+                                                    <li
+                                                        v-for="sub_child in child.children"
+                                                    >
+                                                        <a
+                                                            :href="
+                                                                sub_child.link
+                                                            "
+                                                            class="font-semibold"
+                                                        >
+                                                            {{ sub_child.name }}
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </DisclosurePanel>
+                                        </Disclosure>
                                     </li>
                                 </ul>
                             </DisclosurePanel>

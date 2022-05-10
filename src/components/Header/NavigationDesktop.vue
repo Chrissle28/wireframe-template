@@ -165,6 +165,16 @@ const update = (
     });
 };
 
+const initClose = () => {
+    window.addEventListener(
+        'scroll',
+        () => {
+            hideNavigation();
+        },
+        { once: true }
+    );
+};
+
 /**
  * close all sub navigations
  */
@@ -205,6 +215,7 @@ const showSubnavLevel1 = (index: any, placement: any) => {
     const tooltip: any = document.querySelector(`.nav-button-${index} + div`);
     tooltip.style.display = 'block';
     positioningLevel1(index, placement);
+    initClose();
 };
 
 /**
